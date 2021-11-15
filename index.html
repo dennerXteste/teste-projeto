@@ -24,10 +24,11 @@
     }
 
     function show(matches){
+        console.log(matches);
         let output = '';
 
         for(let match of matches){
-            console.log();
+            
             output += `<li>${match.homeTeam.name} ${match.score.fullTime.homeTeam} x ${match.score.fullTime.awayTeam} ${match.awayTeam.name}</li>`;
         }
 
