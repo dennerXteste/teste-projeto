@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>brasil</title>
+</head>
+<body>
+    <main></main>
+    
+</body>
+<script>
+    async function getContent(){
+        try {
+            const response = await fetch('http://192.168.0.113:3000/api');
+            const data = await response.json();        
+            show(data);
+        } catch (error) {
+            console.error(error);
+        }
+
+    }
+
+    function show(matches){
+        let output = '';
+
+        for(let match of matches){
+            console.log();
+            output += `<li>${match.homeTeam.name} ${match.score.fullTime.homeTeam} x ${match.score.fullTime.awayTeam} ${match.awayTeam.name}</li>`;
+        }
+
+        document.querySelector('main').innerHTML = output;
+    }
+
+    getContent();
+</script>
+</html>
