@@ -18,7 +18,8 @@ app.get('/api', async (req, res) => {
         headers: { 'X-Auth-Token': '27081df1dd8e437fa867ef624b08662f'},
         url: `https://api.football-data.org/v2/matches?competitions=BSA&dateFrom=${dataAtual}&dateTo=${dataAtual}`
     });
-
+        console.log(data);
+        console.log(data['matches']);
         
         return res.json(data['matches']);
 });
