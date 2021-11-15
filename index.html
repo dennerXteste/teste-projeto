@@ -16,7 +16,7 @@
         try {
             const response = await fetch('https://x-teste-projeto.herokuapp.com/api');
             const data = await response.json();        
-            show(data);
+            show(data['matches']);
         } catch (error) {
             console.error(error);
         }
