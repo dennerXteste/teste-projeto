@@ -5,9 +5,9 @@ const axios = require('axios');
 const path = require('path');
 const { dirname } = require('path');
 const port = process.env.PORT || 3000;
-const data = new Date();
-let dataAtual = `${data.getFullYear()}-${data.getMonth()+1}-${data.getDate()}`;
-console.log(dataAtual);
+const date = new Date();
+let dateCurrent = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+let dateWeek = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()+7}`;
  
 app.use(cors());
 
@@ -16,7 +16,7 @@ app.get('/api', async (req, res) => {
      console.log(res);
     const {data} = await axios({
         headers: { 'X-Auth-Token': '27081df1dd8e437fa867ef624b08662f'},
-        url: `https://api.football-data.org/v2/matches?competitions=BSA&dateFrom=2021-11-14&dateTo=2021-11-14`
+        url: `https://api.football-data.org/v2/matches?competitions=BSA&dateFrom=${dateCurrent}&dateTo=${dateWeek}`
     });
         console.log(data);
         console.log(data['matches']);
