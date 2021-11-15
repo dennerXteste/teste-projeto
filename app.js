@@ -13,7 +13,7 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname)));
 app.get('/api', async (req, res) => {
-
+     console.log(res);
     const {data} = await axios({
         headers: { 'X-Auth-Token': '27081df1dd8e437fa867ef624b08662f'},
         url: `https://api.football-data.org/v2/matches?competitions=BSA&dateFrom=${dataAtual}&dateTo=${dataAtual}`
