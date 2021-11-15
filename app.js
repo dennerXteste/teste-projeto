@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname)));
 app.get('/api', async (req, res) => {
      console.log(res);
     const {data} = await axios({
-        headers: { 'X-Auth-Token': '27081df1dd8e437fa867ef624b08662f'},
+        headers: { 'X-Auth-Token': '27081df1dd8e437fa867ef624b0866'},
         url: `https://api.football-data.org/v2/matches?competitions=BSA&dateFrom=${dateCurrent}&dateTo=${dateWeek}`
     });
         console.log(data);
