@@ -16,7 +16,7 @@ app.get('/api', async (req, res) => {
      console.log(res);
     const {data} = await axios({
         headers: { 'X-Auth-Token': '27081df1dd8e437fa867ef624b08662f'},
-        url: `https://api.football-data.org/v2/matches?competitions=BSA&dateFrom=${dataAtual}&dateTo=${dataAtual}`
+        url: `https://api.football-data.org/v2/matches?competitions=BSA&dateFrom=2021-11-14&dateTo=2021-11-14`
     });
         console.log(data);
         console.log(data['matches']);
@@ -25,3 +25,5 @@ app.get('/api', async (req, res) => {
 });
  
 app.listen(port);
+
+//https://api.football-data.org/v2/matches?competitions=BSA&dateFrom=${dataAtual}&dateTo=${dataAtual}
