@@ -20,7 +20,7 @@ app.get('/api', async (req, res) => {
     });
 
         
-        return res.json(data.matches);
+        return res.json(data);
 });
  
 app.listen(port);
